@@ -1,0 +1,25 @@
+{{#contentFor "langSwitcher"}}
+  {{#get "posts" visibility="internal" limit="1" filter="tag:hash-en"}}
+    {{#foreach posts}}
+      {{#if @first}}
+        <a class="text-sm" href="{{@site.url}}/en/">🇬🇧&nbsp;&nbsp;</a>
+      {{/if}}
+    {{/foreach}}
+  {{/get}}
+
+  {{#get "posts" visibility="internal" limit="1" filter="tag:hash-de"}}
+    {{#foreach posts}}
+      {{#if @first}}
+        <a class="text-sm" href="{{@site.url}}/de/">🇩🇪&nbsp;&nbsp;</a>
+      {{/if}}
+    {{/foreach}}
+  {{/get}}
+  
+  {{#get "posts" visibility="internal" limit="1" filter="tag:hash-ro"}}
+    {{#foreach posts}}
+      {{#if @first}}
+        <a class="text-sm" href="{{@site.url}}/ro/">🇷🇴</a>
+      {{/if}}
+    {{/foreach}}
+  {{/get}}
+{{/contentFor}}
