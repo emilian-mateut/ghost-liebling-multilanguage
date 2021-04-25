@@ -3,15 +3,12 @@ This template is used for the post page.
 --}}
 
 {{#post}}
-  {{#has tag="#-ro" visibility="internal"}}
+  {{#has tag="#ro" visibility="internal"}}
     {{> "ro" headerBackground=feature_image}}
-
-  {{else has tag="#-de" visibility="internal"}}
+  {{else has tag="#de" visibility="internal"}}
     {{> "de" headerBackground=feature_image}}
-  
   {{else}}
     {{> "en" headerBackground=feature_image}}
-
   {{/has}}
 {{/post}}
 
@@ -31,9 +28,8 @@ into the {body} of the default.hbs template --}}
 {{!< default}}
 
 {{!-- Special header.hbs partial to generate the <header> tag --}}
-{{#post}}
-  {{> header background=feature_image}}
-{{/post}}
+{{!-- block defined in locale partials, e.g. en.hbs, de.hbs etc --}}
+{{{block "header"}}}
 
 <main class="main-wrap">
   {{#post}}

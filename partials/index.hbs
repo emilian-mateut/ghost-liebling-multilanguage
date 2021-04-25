@@ -4,7 +4,8 @@ It can be used also as the home page or the default page.
 --}}
 
 {{!-- Special header.hbs partial to generate the <header> tag --}}
-{{> header background=@site.cover_image}}
+{{!-- block defined in locale partials, e.g. en.hbs, de.hbs etc --}}
+{{{block "header"}}}
 
 <main class="main-wrap">
   {{!-- Inject styles of the hero image to make it responsive --}}
@@ -14,7 +15,6 @@ It can be used also as the home page or the default page.
     {{#if @site.description}}
       <p class="m-hero-description bigger">{{@site.description}}</p>
     {{/if}}
-    <a href="{{@site.url}}/newsletter" class="m-button filled js-newsletter">{{block "Subscribe"}}</a>
     <p>{{{block "langSwitcher"}}}</p>
   </div>
   </section>

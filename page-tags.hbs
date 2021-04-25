@@ -3,6 +3,9 @@ This template is used for the tags page.
 You must first create a page called Tags in the dashboard to enable it.
 --}}
 
+{{!-- English is the default language for this page --}}
+{{> "en" headerBackground=feature_image}}
+
 {{!-- This block preloads specific assets for the tags page --}}
 {{#contentFor "preload"}}
   <link rel="preload" href="{{asset "css/tags.css"}}" as="style" />
@@ -18,9 +21,8 @@ into the {body} of the default.hbs template --}}
 {{!< default}}
 
 {{!-- Special header.hbs partial to generate the <header> tag --}}
-{{#post}}
-  {{> header background=feature_image}}
-{{/post}}
+{{!-- block defined in locale partials, e.g. en.hbs, de.hbs etc --}}
+{{{block "header"}}}
 
 <main class="main-wrap">
   {{#post}}

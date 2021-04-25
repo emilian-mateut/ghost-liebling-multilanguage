@@ -2,6 +2,9 @@
 This template is used for the tag page.
 --}}
 
+{{!-- English is the default language for this page. --}}
+{{> "en" headerBackground=feature_image}}
+
 {{!-- This block preloads specific assets for the tag page --}}
 {{#contentFor "preload"}}
   <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
@@ -17,9 +20,8 @@ into the {body} of the default.hbs template --}}
 {{!< default}}
 
 {{!-- Special header.hbs partial to generate the <header> tag --}}
-{{#tag}}
-  {{> header background=feature_image}}
-{{/tag}}
+{{!-- block defined in locale partials, e.g. en.hbs, de.hbs etc --}}
+{{{block "header"}}}
 
 <main class="main-wrap">
   {{!-- Everything inside the #tag tags pulls data from the tag --}}

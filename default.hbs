@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}">
+<html lang="{{block "lang"}}">
   <head>
     {{!-- Document Settings --}}
     <meta charset="utf-8" />
@@ -100,7 +100,8 @@
     {{> search}}
 
     {{!-- The footer --}}
-    {{> footer}}
+    {{!-- block defined in locale partials, e.g. en.hbs, de.hbs etc --}}
+    {{{block "footer"}}}
 
     {{!-- Notifications alerts --}}
     {{> "notifications"}}
