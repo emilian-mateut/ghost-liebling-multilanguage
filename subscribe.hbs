@@ -20,7 +20,7 @@ into the {body} of the default.hbs template --}}
   <div class="l-wrapper" data-aos="fade-down">
     <a href="{{@site.url}}" class="m-back">
       <span class="m-back__icon icon-arrow-left"></span>
-      <span>{{t "Back to home"}}</span>
+      <span>{{block "Back to home"}}</span>
     </a>
   </div>
   
@@ -30,10 +30,10 @@ into the {body} of the default.hbs template --}}
         <div>
           <header class="m-heading in-subscribe-page">
             <h1 class="m-heading__title">
-              {{t "Subscribe to {blogtitle}" blogtitle=@site.title}}
+              {{block "Subscribe to {blogtitle}" blogtitle=@site.title}}
             </h1>
             <p class="m-heading__description in-subscribe-page">
-              {{t "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox."}}
+              {{block "Stay up to date! Get all the latest & greatest posts delivered straight to your inbox."}}
             </p>
           </header>
           {{subscribe_form
@@ -43,20 +43,20 @@ into the {body} of the default.hbs template --}}
               input_class="m-input in-subscribe-section"
               button_id="subscribe_button"
               button_class="m-button primary block"
-              placeholder=(t "Your email address")
+              placeholder=(block "Your email address")
               autofocus="true"
             }}
         </div>
       {{else}}
         <div>
           <header class="m-heading in-subscribe-page">
-            <h1 class="m-heading__title">{{t "Subscribed!"}}</h1>
+            <h1 class="m-heading__title">{{block "Subscribed!"}}</h1>
             <p class="m-heading__description in-subscribe-page">
-              {{t "You've successfully subscribed to"}} <strong>{{@site.title}}</strong> {{t "with the email address"}}
+              {{block "You've successfully subscribed to"}} <strong>{{@site.title}}</strong> {{block "with the email address"}}
               <strong>{{email}}</strong>
             </p>
           </header>
-          <a href="{{@site.url}}" class="m-button outlined">{{t "Back to home"}}</a>
+          <a href="{{@site.url}}" class="m-button outlined">{{block "Back to home"}}</a>
         </div>
       {{/if}}
     </section>
