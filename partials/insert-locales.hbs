@@ -1,0 +1,9 @@
+{{#post}}
+  {{#has tag="#ro" visibility="internal"}}
+    {{> "ro" headerBackground=feature_image}}
+  {{else has tag="#de" visibility="internal"}}
+    {{> "de" headerBackground=feature_image}}
+  {{else}}
+    {{> "en" headerBackground=feature_image}}
+  {{/has}}
+{{/post}}

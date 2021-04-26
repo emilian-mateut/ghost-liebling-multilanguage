@@ -3,8 +3,7 @@ This template is used for the authors page.
 You must first create a page called Authors in the dashboard to enable it.
 --}}
 
-{{!-- English is the default language for this page. --}}
-{{> "en" headerBackground=feature_image}}
+{{> insert-locales}}
 
 {{!-- This block preloads specific assets for the authors page --}}
 {{#contentFor "preload"}}
@@ -61,7 +60,7 @@ into the {body} of the default.hbs template --}}
                   </a>
                   <div class="m-article-card__author-stats">
                     <span>
-                      {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
+                      {{plural count.posts empty=(block "No posts") singular=(block "1 post") plural=(block "% posts")}}
                     </span>
                     {{#has any="twitter, facebook, website"}}
                       <ul class="m-article-card__social">

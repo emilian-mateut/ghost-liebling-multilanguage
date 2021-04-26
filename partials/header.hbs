@@ -62,7 +62,8 @@ This header template is shared across all the pages.
                 </button>
                 <div class="m-submenu js-submenu">
                   <div class="l-wrapper in-submenu">
-                    <section class="m-recent-articles">
+                    {{!-- I don't need this to my blog, but I let the code here in case someone else does --}}
+                    {{!-- <section class="m-recent-articles">
                       <h3 class="m-submenu-title in-recent-articles">{{block "Recent articles"}}</h3>
                       {{#get "posts" limit="4" order="published_at desc" as |recent|}}
                         {{#if recent}}
@@ -93,14 +94,14 @@ This header template is shared across all the pages.
                           <div class="m-not-found in-recent-articles">{{block "No posts found"}}</div>
                         {{/if}}
                       {{/get}}
-                    </section>
+                    </section> --}}
                     <section class="m-tags">
                       <h3 class="m-submenu-title">{{block "Tags"}}</h3>
-                      {{#get "tags" limit="10"}}
+                      {{#get "tags" limit='all' include='count.posts'}}
                         <ul>
                           {{#foreach tags}}
                             <li>
-                              <a href="{{url}}">{{name}}</a>
+                              <a href="{{url}}">{{name}} ({{count.posts}})</a>
                             </li>
                             {{else}}
                               <li class="m-not-found">{{block "No tags found :("}}</li>

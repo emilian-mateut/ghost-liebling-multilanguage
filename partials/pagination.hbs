@@ -3,7 +3,7 @@ This pagination template is used to navigate through newer and older articles.
 --}}
 
 <div class="l-wrapper">
-  <nav class="m-pagination" aria-label="{{t "Pagination"}}">
+  <nav class="m-pagination" aria-label="{{block "Pagination"}}">
     {{#if prev}}
       <a href="{{page_url prev}}" class="m-icon-button filled in-pagination-left" aria-label="{{block "Newer posts"}}">
         <span class="icon-arrow-left"></span>

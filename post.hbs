@@ -2,15 +2,7 @@
 This template is used for the post page.
 --}}
 
-{{#post}}
-  {{#has tag="#ro" visibility="internal"}}
-    {{> "ro" headerBackground=feature_image}}
-  {{else has tag="#de" visibility="internal"}}
-    {{> "de" headerBackground=feature_image}}
-  {{else}}
-    {{> "en" headerBackground=feature_image}}
-  {{/has}}
-{{/post}}
+{{> insert-locales}}
 
 {{!-- This block preloads specific assets for the post page --}}
 {{#contentFor "preload"}}
@@ -49,8 +41,8 @@ into the {body} of the default.hbs template --}}
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
               <div class="m-heading__meta">
-                {{#if primary_tag}}
-                  <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
+                {{#if tags.[2]}}
+                  <a href="{{tags.[2].url}}" class="m-heading__meta__tag">{{tags.[2].name}}</a>
                   <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
                 {{/if}}
                 <span class="m-heading__meta__time">{{date published_at}}</span>
@@ -127,7 +119,7 @@ into the {body} of the default.hbs template --}}
               </h4>
               {{#has author="count:>1"}}
                 <p class="m-small-text in-author-along-with">
-                  {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
+                  {{authors separator=", " prefix=(block "Among with no break line") from="2"}}
                 </p>
               {{/has}}
               {{#if primary_author.bio}}

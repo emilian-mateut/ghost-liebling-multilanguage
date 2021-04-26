@@ -1,12 +1,12 @@
 {{#get "posts" visibility="internal" include="tags" limit="all" filter="tag:{{tags.[0].slug}}+id:-{{id}}"}}
   {{#foreach posts}}
     <a href="{{url}}" style="text-decoration: none;">
-      {{#has tag="#en" visibility="internal"}}
-      🇬🇧&nbsp;&nbsp;
-      {{else has tag="#ro" visibility="internal"}}
+      {{#has tag="#ro" visibility="internal"}}
       🇷🇴&nbsp;&nbsp; 
+      {{else has tag="#en" visibility="internal"}}
+      🇬🇧&nbsp;&nbsp;
       {{else has tag="#de" visibility="internal"}}
-      🇩🇪
+      🇩🇪&nbsp;&nbsp;
       {{/has}}
     </a>
   {{/foreach}}
