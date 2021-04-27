@@ -164,7 +164,7 @@ $(() => {
     })
 
     recommendedSlider.on('length.change', (length) => {
-      if (length === 1) {
+      if (length <= 3) {
         recommendedSlider.update({ type: 'slider' })
         $recommendedSlider.find('.js-controls').remove()
       }

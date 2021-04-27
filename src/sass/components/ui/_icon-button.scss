@@ -154,9 +154,9 @@
     z-index: 2;
     @include transform(translateY(-50%));
 
-    @include respond-to('large') {
-      display: none;
-    }
+    // @include respond-to('large') {
+    //   display: none;
+    // }
 
     &.glide-prev {
       left: 0;
