@@ -5,6 +5,11 @@ Also it includes the big submenu.
 
 {{#if isSecondary}}
   <ul class="m-secondary-menu">
+    {{#foreach navigation}}
+       <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
+         <a href="{{url absolute="true"}}">{{label}}</a>
+       </li>
+    {{/foreach}}
     {{#get "pages" limit="all" order="title asc" filter="tag:hash-{{langCode}}-nav2"}}
       {{#foreach pages}}
         <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
@@ -14,16 +19,19 @@ Also it includes the big submenu.
     {{/get}}
   </ul>
 {{else}}
-  {{#foreach navigation}}
-    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
-      <a href="{{url absolute="true"}}">{{label}}</a>
-    </li>
-  {{/foreach}}
-  {{#get "pages" limit="all" order="title asc" filter="tag:hash-{{langCode}}-nav"}}
+  <li class="nav-blog">
+    <a href="/{{langCode}}/">Blog</a>
+  </li>
+  {{#get "pages" limit="all" order="primary_tag asc" filter="tag:hash-{{langCode}}-nav"}}
     {{#foreach pages}}
       <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
         <a href="{{url absolute="true"}}">{{title}}</a>
       </li>
     {{/foreach}}
   {{/get}}
+  {{#foreach navigation}}
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
+      <a href="{{url absolute="true"}}">{{label}}</a>
+    </li>
+  {{/foreach}}
 {{/if}}

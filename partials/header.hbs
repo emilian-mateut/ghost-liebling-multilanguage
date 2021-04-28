@@ -8,7 +8,7 @@ This header template is shared across all the pages.
       <span class="icon-menu" aria-hidden="true"></span>
     </button>
     {{#if @site.logo}}
-      <a href="{{@site.url}}" class="m-logo in-mobile-topbar">
+      <a href="{{@site.url}}/{{langCode}}/" class="m-logo in-mobile-topbar">
         <img src="{{@site.logo}}" alt="{{@site.title}}">
       </a>
     {{else}}
@@ -32,7 +32,7 @@ This header template is shared across all the pages.
             <ul>
               {{#if @site.logo}}
                 <li class="only-desktop">
-                  <a href="{{@site.url}}" class="m-logo">
+                  <a href="{{@site.url}}/{{langCode}}/" class="m-logo">
                     <img src="{{@site.logo}}" alt="{{@site.title}}">
                   </a>
                 </li>
@@ -43,9 +43,7 @@ This header template is shared across all the pages.
                   </a>
                 </li>
               {{/if}}
-              {{#if @site.navigation}}
-                {{navigation langCode=langCode}}
-              {{/if}}
+              {{navigation langCode=langCode}}
               {{#if @site.secondary_navigation}}
                 <li class="more">
                   <span>
@@ -101,7 +99,7 @@ This header template is shared across all the pages.
                         <ul>
                           {{#foreach tags}}
                             <li>
-                              <a href="{{url}}">{{name}} ({{count.posts}})</a>
+                              <a href="{{url}}">{{name}}</a>
                             </li>
                             {{else}}
                               <li class="m-not-found">{{block "No tags found :("}}</li>
