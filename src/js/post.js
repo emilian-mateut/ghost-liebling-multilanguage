@@ -164,7 +164,7 @@ $(() => {
     })
 
     recommendedSlider.on('length.change', (length) => {
-      if (length <= 3) {
+      if ((isMobile() && length === 1) || (!isMobile() && length <= 3)) {
         recommendedSlider.update({ type: 'slider' })
         $recommendedSlider.find('.js-controls').remove()
       }
