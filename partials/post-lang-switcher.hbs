@@ -1,3 +1,6 @@
+{{#has tag="#ro, #en, #de"}}
+    <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
+{{/has}}
 {{#get "posts" visibility="internal" include="tags" limit="all" filter="tag:{{tags.[0].slug}}+id:-{{id}}"}}
   {{#foreach posts}}
     <a href="{{url}}" style="text-decoration: none;">
