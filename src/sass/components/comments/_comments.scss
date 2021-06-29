@@ -1,7 +1,7 @@
 .m-comments {
   padding-top: 40px;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     padding-top: 60px;
   }
 
@@ -9,4 +9,8 @@
     width: 100%;
     max-width: 100%;
   }
+}
+
+.textarea-wrapper {
+  color: black;
 }
