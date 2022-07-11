@@ -1,0 +1,35 @@
+// ro
+<script>
+    var a = document.querySelector('a[id="en"]');
+	if (a) {
+		a.setAttribute('href', 'https://mountainsetal.com/en/')
+	}
+</script>
+
+// en
+<script>
+	var a = document.querySelector('a[id="ro"]');
+	if (a) {
+		a.setAttribute('href', 'https://mountainsetal.com/ro/')
+	}
+</script>
+
+
+
+// ro
+<script>
+    var a = document.querySelector('a[id="en"]');
+	if (a) {
+		a.setAttribute('href', 'https://mountainsetal.com/en/discovering-slovenia/')
+	}
+</script>
+
+// en
+<script>
+	var a = document.querySelector('a[id="ro"]');
+	if (a) {
+		a.setAttribute('href', 'https://mountainsetal.com/ro/descoperind-slovenia/')
+	}
+</script>
+
+
