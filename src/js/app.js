@@ -198,11 +198,11 @@ $(() => {
 
   $toggleDarkMode.on('change', () => {
     if ($toggleDarkMode.is(':checked')) {
-      $('html').attr('data-theme', 'dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
       $('html').attr('data-theme', 'light');
       localStorage.setItem('theme', 'light');
+    } else {
+      $('html').attr('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
     }
 
     if ($nativeComments) {
@@ -234,7 +234,7 @@ $(() => {
   });
 
   if (currentSavedTheme) {
-    if (currentSavedTheme === 'dark') {
+    if (currentSavedTheme === 'light') {
       $toggleDarkMode.each(function() {
         $(this).attr('checked', true);
       });
